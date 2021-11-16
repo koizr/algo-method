@@ -1,4 +1,12 @@
 #[allow(dead_code)]
+fn input_string() -> String {
+    let mut s = String::new();
+    std::io::stdin().read_line(&mut s).unwrap();
+
+    s.trim().to_owned()
+}
+
+#[allow(dead_code)]
 fn input_i32() -> i32 {
     let mut s = String::new();
     std::io::stdin().read_line(&mut s).unwrap();
