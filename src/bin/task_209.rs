@@ -15,9 +15,9 @@ fn main() {
 
     let mut s = String::new();
     io::stdin().read_line(&mut s).unwrap();
-    let nums: Vec<i32> = s.split_whitespace().map(|n| n.parse().unwrap()).collect();
+    let mut nums = s.split_whitespace().map(|n| n.parse::<i32>().unwrap());
 
-    let answer = if nums.contains(&v) { "Yes" } else { "No" };
+    let answer = if nums.any(|x| x == v) { "Yes" } else { "No" };
 
     println!("{}", answer);
 }

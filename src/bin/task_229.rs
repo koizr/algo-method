@@ -4,7 +4,7 @@ fn main() {
     let s = input_string().chars().collect::<Vec<char>>();
     let t = input_string().chars().collect::<Vec<char>>();
 
-    let answer = s.windows(t.len()).any(|cs| cs == &t);
+    let answer = s.windows(t.len()).any(|cs| cs == t);
 
     println!("{}", if answer { "Yes" } else { "No" })
 }

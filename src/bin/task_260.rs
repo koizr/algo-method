@@ -1,6 +1,6 @@
 //! https://algo-method.com/tasks/260
 
-use std::{collections::HashMap, ops::Not};
+use std::collections::HashMap;
 
 fn main() {
     let n = input_i32();
@@ -13,12 +13,7 @@ fn main() {
         *entry += 1;
     }
 
-    let contains = strings
-        .iter()
-        .filter(|(_, &count)| count > 1)
-        .collect::<Vec<_>>()
-        .is_empty()
-        .not();
+    let contains = strings.iter().any(|(_, &count)| count > 1);
 
     println!("{}", if contains { "Yes" } else { "No" });
 }
